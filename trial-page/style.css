@@ -53,7 +53,8 @@ body {
     margin: 0 auto;
     padding: 4px 0;
     letter-spacing: 0.3px;
-    color: rgba(255, 255, 255, 0.72);;
+    color: rgba(255, 255, 255, 0.72);
+    ;
 }
 
 .services {
@@ -70,39 +71,76 @@ body {
     border-radius: 16px;
     box-shadow: 0px 4px 20px -4px rgba(16, 24, 40, 0.08);
     display: flex;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
 
-.service .service-icon {
+.service-icon {
     margin-right: 27px;
     width: 48px;
     height: 48px;
+    transition: transform 0.4s ease;
+    z-index: 1;
+    position: relative;
 }
 
-.service h3 {
+.service-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.service-content {
+    flex: 1;
+    z-index: 1;
+    position: relative;
+}
+
+.service-content h3 {
     color: #101828;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
     margin-top: 3px;
+    transition: transform 0.4s ease;
 }
 
-.service p{
+.service-content p {
     font-size: 16px;
     color: #475467;
     margin: 0;
     line-height: 24px;
+    transition: transform 0.4s ease;
 }
 
-.service a {
+.service-content a {
     color: #A60F2D;
     font-weight: 600;
     text-decoration: none;
     display: flex;
     margin-top: 23px;
+    transition: transform 0.4s ease;
 }
 
-.service a img {
+.service-content a img {
     margin-left: 6px;
+}
+
+/* Hover effects */
+.service:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service:hover h3,
+.service:hover p,
+.service:hover a {
+    transform: translateY(-5px);
+}
+
+.service:hover .service-icon {
+    transform: rotate(5deg) scale(1.1);
 }
 
 .request-service {
@@ -163,7 +201,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .request-service-item, .services {
+
+    .request-service-item,
+    .services {
         grid-template-columns: auto;
     }
 
