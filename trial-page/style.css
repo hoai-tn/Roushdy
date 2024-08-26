@@ -71,16 +71,15 @@ body {
     box-shadow: 0px 4px 20px -4px rgba(16, 24, 40, 0.08);
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
     position: relative;
+    transition: box-shadow 0.3s ease;
 }
 
 .service-icon {
     margin-bottom: 27px;
     width: 48px;
     height: 48px;
-    transition: transform 0.4s ease;
     z-index: 1;
     position: relative;
 }
@@ -102,7 +101,7 @@ body {
     font-weight: 500;
     margin-bottom: 10px;
     margin-top: 3px;
-    transition: transform 0.4s ease;
+    transition: color 0.3s ease;
 }
 
 .service-content p {
@@ -110,7 +109,7 @@ body {
     color: #475467;
     margin: 0;
     line-height: 24px;
-    transition: transform 0.4s ease;
+    transition: color 0.3s ease;
 }
 
 .service-content a {
@@ -119,7 +118,7 @@ body {
     text-decoration: none;
     display: inline-block;
     margin-top: 23px;
-    transition: transform 0.4s ease;
+    transition: color 0.3s ease;
     text-align: center;
     vertical-align: middle;
 }
@@ -129,20 +128,8 @@ body {
     vertical-align: middle;
 }
 
-/* Hover effects */
 .service:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service:hover h3,
-.service:hover p,
-.service:hover a {
-    transform: translateY(-5px);
-}
-
-.service:hover .service-icon {
-    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .request-service {
@@ -209,13 +196,16 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+
     .request-service-item,
     .services {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+
     .header h2 {
         font-size: 32px;
     }
+
     .request-service-title {
         padding: 0 5px;
     }
